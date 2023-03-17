@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link rel="icon" type="image/x-icon" href="images.png">
+<style>
+    .calculator {
+  margin: 50px auto;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 250px;
+  height: 310px;
+ 
+  font-family: Arial, sans-serif;
+  background-color: black;
+
+}
+
+.display {
+  height: 60px;
+  text-align: right;
+  padding: 10px;
+  
+}
+
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 5px;
+  padding: 10px;
+}
+
+button {
+  border: none;
+  border-radius: 5px;
+  background-color: #ccc;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #aaa;
+}
+
+button:active {
+  transform: translateY(2px);
+}
+
+#result {
+  width: 100%;
+  height: 100%;
+  font-size: 30px;
+  border: none;
+  background-color: transparent;
+  color: white;
+}
+input:focus {
+  outline: none;
+}
+.main{
+       display: block;
+        text-align: center;
+        height: 90vh;
+}
+.dark-mode {
+  background-color: #050505;
+  color: #fffdfd;
+}
+</style>
+</head>
+
+<body>
+ 
+<div class="main">
+  <div class="calculator">
+         
+    <div style="padding:1vh;"><span style="color: white; ">CASIO</span></div>
+           
+      <div class="display"  style="border: 1px solid white; margin: 1px 10px">
+            <input type="text" id="result"  readonly> 
+      </div>
+    
+        <div class="buttons">       
+            <button onclick="getResult('7')">7</button>
+            <button onclick="getResult('8')">8</button>
+            <button onclick="getResult('9')">9</button>
+            <button onclick="getResult('*')" style="background-color: orange;">x</button>
+            <button onclick="getResult('4')">4</button>
+            <button onclick="getResult('5')">5</button>
+            <button onclick="getResult('6')">6</button>
+            <button onclick="getResult('-')" style="background-color: orange;">-</button>
+            <button onclick="getResult('1')">1</button>
+            <button onclick="getResult('2')">2</button>
+            <button onclick="getResult('3')">3</button>
+            <button onclick="getResult('+')" style="background-color: orange;">+</button>
+            <button onclick="getResult('/')" style="background-color: orange;">÷</button>
+            <button onclick="getResult('0')">0</button>
+            <button onclick="getResult('.')">.</button>
+            <button onclick="calculate()" style="background-color: orange;">=</button>
+            <button onclick="clearResult()" style="background-color: orange;">C</button>
+        </div>
+
+  </div>
+
+</div> 
+
+<!--Appstore image-->
+<div class="container" style="height: 0;text-align: center;">
+  <a class="navbar-brand" href="index.html">
+    <img src="download (3).png" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
+    Appstore
+  </a>
+</div>
+
+<button id="toggle-btn"><img src="OIP.jpeg" height="40"></button>
+      
+<!--script for functionallity-->
+ <script>
+     let result = document.getElementById('result');
+     function getResult(value) {
+     result.value += value;
+     }
+     function clearResult() {
+     result.value = '';
+     }
+     function calculate() {
+     try {
+          result.value = eval(result.value);
+         } catch (error) {
+         result.value = 'Error';
+         }
+     }
+ //script for functionality
+
+    //script for darkmode and light mode button
+    const toggleBtn = document.querySelector('#toggle-btn');
+    const body = document.querySelector('body');
+    
+      toggleBtn.addEventListener('click', function() {
+      body.classList.toggle('dark-mode');
+      if (body.classList.contains('dark-mode')) {
+        var img = document.createElement("img");
+        img.style.height = "40px";
+        img.src = "morn.jpeg" ;
+        var src = document.getElementById("toggle-btn");
+        src.replaceChildren(img);
+        
+      } else {
+        var img = document.createElement("img");
+        img.style.height = "40px";
+        img.src = "OIP.jpeg";
+        var src = document.getElementById("toggle-btn");
+        src.replaceChildren(img);
+        
+      }
+      });
+    //script for darkmode and light mode button
+
+</script>
+
+<!--script for bootstrap-->  
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+
+</body>
+</html>
+

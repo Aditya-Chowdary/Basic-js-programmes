@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apps</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link rel="icon" type="image/x-icon" href="download (3).png">
+</head>
+<style>
+    .container{
+        padding: 40px 0px;
+        background-color: #bd6e6e;
+        margin: 5px;
+        
+        border-radius: 5px;
+        box-shadow: 4px 2px 2px 0.5px rgb(124, 98, 98);
+        
+    }
+    .dark-mode {
+  background-color: #050505;
+  color: #fffdfd;
+}
+</style>
+
+<body>
+
+  <div style="text-align:center;justify-content: center;align-items: center;display: flex;clear: both; height: 94vh;">
+
+    <!--counter app-->      
+
+    <div class="container">
+          <a class="navbar-brand" href="counter.html">
+            <img src="download.png" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
+            Counter
+          </a>
+    </div>
+
+    <!--calculator app-->     
+     
+    <div class="container">
+          <a class="navbar-brand" href="calculator.html">
+            <img src="images.png" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
+            Calculator
+          </a>
+    </div>    
+
+    <!--quote generator app-->     
+
+    <div class="container">
+          <a class="navbar-brand" href="quotes.html">
+            <img src="download (1).png" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
+            Quote generator
+          </a>    
+     </div>
+
+     <!--todolist app-->     
+
+     <div class="container">
+          <a class="navbar-brand" href="todolist.html">
+            <img src="download (2).png" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
+            Todolist
+          </a>
+    </div>
+</div>
+
+  <button id="toggle-btn"><img src="OIP.jpeg" height="40"></button>
+
+<!--Bootstrap script-->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+
+<!--script for darkmode and light mode button-->
+
+<script>
+    const toggleBtn = document.querySelector('#toggle-btn');
+    const body = document.querySelector('body');
+    
+    toggleBtn.addEventListener('click', function() {
+      body.classList.toggle('dark-mode');
+      if (body.classList.contains('dark-mode')) {
+        var img = document.createElement("img");
+        img.style.height = "40px";
+        img.src = "morn.jpeg" ;
+        var src = document.getElementById("toggle-btn");
+        src.replaceChildren(img);
+        
+      } else {
+        var img = document.createElement("img");
+        img.style.height = "40px";
+        img.src = "OIP.jpeg";
+        var src = document.getElementById("toggle-btn");
+        src.replaceChildren(img);
+      }
+    });
+</script>
+
+<!--script for darkmode and light mode button-->
+
+</body>
+</html>
